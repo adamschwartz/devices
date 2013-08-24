@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="text" placholder="http://..." autocomplete="off" spellcheck="false" />
+    <div id="toolbar" data-resizer="basic">
+        <ul id="devices">
+            <li>
+                <a data-media="mobile" data-viewport="320x480" data-icon="mobile" title="Mobile" class="portrait">
+                    Mobile
+                </a>
+            </li>
+            <li>
+                <a data-media="iphone5" data-viewport="320x568" data-icon="mobile" data-version="5" title="iPhone 5" class="portrait">
+                    iPhone 5
+                </a>
+            </li>
+            <li>
+                <a data-media="small-tablet" data-viewport="600x800" data-icon="small-tablet" title="Small Tablet" class="portrait">
+                    Small Tablet
+                </a>
+            </li>
+            <li>
+                <a data-media="ipad" data-viewport="768x1024" data-icon="tablet" title="iPad" class="portrait">
+                    iPad
+                </a>
+            </li>
+        </ul>
+        <ul id="tools">
+            <li class="info">
+                <b></b>
+                <span></span>
+            </li>
+        </ul>
+        <!--ul id="extras">
+            <li>
+                <a data-icon="reload" title="Reload current page"></a>
+            </li>
+        </ul-->
+    </div>
+    <webview src=""></webview>
+    <script src="jquery.js"></script>
+    <script src="window.js"></script>
+</body>
+</html>

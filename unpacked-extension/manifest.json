@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Devices",
+    "description": "View the web on different devices.",
+    "version": "1",
+    "icons": {
+        "16": "icon16.png",
+        "128": "icon128.png"
+    },
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "requirements": {
+        "3D": {
+            "features": ["css3d", "webgl"]
+        }
+    },
+    "permissions": [
+        "storage",
+        "webview"
+    ],
+    "offline_enabled": false
+}
