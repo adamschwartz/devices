@@ -54,12 +54,11 @@ app.loadSettings = function(callback) {
 };
 
 app.saveSettings = function() {
-    chrome.storage.sync.set(app.settings);
+    //chrome.storage.sync.set(app.settings);
 };
 
 app.restoreLastMedia = function() {
-    var media = app.medias[app.settings.window.media];
-    app.mainWindow.resizeTo(media.width, media.height + app.toolbarHeight);
+    app.resizeWindowToMedia();
     app.mainWindow.moveTo(app.settings.window.left, app.settings.window.top);
     app.mainWindow.show();
 };
@@ -112,14 +111,19 @@ app.setupButtons = function() {
         $('#devices a.active').removeClass('active');
         $(this).addClass('active');
         app.settings.window.media = $(this).data('media');
-        var media = app.medias[app.settings.window.media];
         updateInfo();
-        app.mainWindow.resizeTo(media.width, media.height + app.toolbarHeight);
+        app.resizeWindowToMedia();
         app.saveSettings();
     });
 
     $('#devices a[data-media="' + app.settings.window.media + '"]').addClass('active');
     updateInfo();
+};
+
+app.resizeWindowToMedia = function() {
+    var media = app.medias[app.settings.window.media];
+    app.mainWindow.resizeTo(media.width, media.height + app.toolbarHeight);
+    //$('webview')[0].reload();
 };
 
 app.window = {};
